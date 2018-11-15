@@ -17,12 +17,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    @IBAction func logOut(_ sender: Any) {
+        AWSSignInManager.sharedInstance().logout { (value, error) in
+            self.checkForLogin()
+        }
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //checks if the user is signed in
-        //if signed in does not present the sign up page
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
+        checkForLogin()
+    }
+    
+    //checks if the user is signed in
+    //if signed in does not present the sign up page
+    func checkForLogin(){
+    if !AWSSignInManager.sharedInstance().isLoggedIn {
             AWSAuthUIViewController.presentViewController(with: self.navigationController!, configuration: nil) { (provider, error) in
                 if error == nil {
                     print("success")
