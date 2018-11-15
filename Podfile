@@ -7,6 +7,7 @@ target 'Notes' do
 
   # Pods for Notes
 pod 'AWSMobileClient'
-
+pod 'AWSUserPoolsSignIn'
+pod 'AWSAuthUI'
 
 end
