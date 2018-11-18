@@ -82,7 +82,6 @@
 		D8A57EE0219CD3EF00BE3FFB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				D818850621A1FE7C004CDDF7 /* Models */,
 				D818850421A1FE63004CDDF7 /* awsconfiguration.json */,
 				D8A57EE1219CD3EF00BE3FFB /* AppDelegate.swift */,
 				D8A57EE3219CD3EF00BE3FFB /* ViewController.swift */,
@@ -90,6 +89,7 @@
 				D8A57EE8219CD3F100BE3FFB /* Assets.xcassets */,
 				D8A57EEA219CD3F100BE3FFB /* LaunchScreen.storyboard */,
 				D8A57EED219CD3F100BE3FFB /* Info.plist */,
+				D818850621A1FE7C004CDDF7 /* Models */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -202,6 +202,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSGoogleSignIn/AWSGoogleSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
@@ -222,6 +223,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSGoogleSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
