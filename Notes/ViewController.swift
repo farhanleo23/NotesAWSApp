@@ -46,6 +46,12 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func createNote(){
+        
+        guard let note = Note() else { return }
+        
+    }
 
 
 }
