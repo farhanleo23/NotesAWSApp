@@ -9,17 +9,56 @@ PODS:
     - AWSCore (= 2.7.1)
   - AWSCognitoIdentityProviderASF (1.0.1)
   - AWSCore (2.7.1)
+  - AWSFacebookSignIn (2.7.1):
+    - AWSAuthCore (= 2.7.1)
+    - FBSDKCoreKit (~> 4.0)
+    - FBSDKLoginKit (~> 4.0)
+  - AWSGoogleSignIn (2.7.1):
+    - AWSAuthCore (= 2.7.1)
   - AWSMobileClient (2.7.1):
     - AWSAuthCore (= 2.7.1)
     - AWSCognitoIdentityProvider (= 2.7.1)
   - AWSUserPoolsSignIn (2.7.1):
     - AWSAuthCore (= 2.7.1)
     - AWSCognitoIdentityProvider (= 2.7.1)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.38.1):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.38.1):
+    - FBSDKCoreKit
+  - GoogleSignIn (4.3.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
+  - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
 
 DEPENDENCIES:
   - AWSAuthUI
+  - AWSFacebookSignIn
+  - AWSGoogleSignIn
   - AWSMobileClient
   - AWSUserPoolsSignIn
+  - GoogleSignIn
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -28,8 +67,17 @@ SPEC REPOS:
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
     - AWSCore
+    - AWSFacebookSignIn
+    - AWSGoogleSignIn
     - AWSMobileClient
     - AWSUserPoolsSignIn
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
 
 SPEC CHECKSUMS:
   AWSAuthCore: 456827b7c1eeaa147d9b634b4f0e7b5f3814354f
@@ -37,9 +85,18 @@ SPEC CHECKSUMS:
   AWSCognitoIdentityProvider: fa3d6766c25859fbd4bf8fb72d45e80a0f12ce3e
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
   AWSCore: 828cb57682657296a89859055d71e4468ef75094
+  AWSFacebookSignIn: 9cad916a805ecef9a593ed6ac9342c526928a5d1
+  AWSGoogleSignIn: 3dfc5267d0bf1db34011fe42dd8734990c9789d0
   AWSMobileClient: 39b26aaf01351c69436fc1de13f33ab413fc6b61
   AWSUserPoolsSignIn: 9b376997d4748b7c226b4f4e5b927216a7dd028e
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
+  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
+  GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
 
-PODFILE CHECKSUM: 73c983011f9af89dae23865c51fb38621d8332f9
+PODFILE CHECKSUM: 81c70d8bb6f9eadbf95404fd04f734ac8322016e
 
 COCOAPODS: 1.5.3

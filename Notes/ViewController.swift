@@ -10,6 +10,10 @@ import UIKit
 import AWSAuthCore
 import AWSAuthUI
 
+//webClient
+//808734385241-5dl6ipjgf46fj63e73dn397d8hatj8lu.apps.googleusercontent.com
+//secret: KeTYem3p0B2f0a__0L-bUhe9
+//iOS crendtials: 808734385241-a2q80ktjsv61e935p5ot8ch6oplpm02k.apps.googleusercontent.com
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
