@@ -50,7 +50,14 @@ class ViewController: UIViewController {
     func createNote(){
         
         guard let note = Note() else { return }
-        
+        note._userId = AWSIdentityManager.default().identityId
+        note._noteId = "123"
+        note._content = "This is just a text"
+        note._creationDate = Date().timeIntervalSince1970 as NSNumber
+        let df = DateFormatter()
+        df.dateStyle = .short
+        df.timeStyle = .short
+        note._title = "My note on \(df.string(from: Date()))"
     }
 
 
