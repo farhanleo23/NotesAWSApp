@@ -44,6 +44,8 @@ class ViewController: UIViewController {
                     print(error?.localizedDescription ?? "no value")
                 }
             }
+    } else {
+        createNote()
         }
     }
     
@@ -58,6 +60,16 @@ class ViewController: UIViewController {
         df.dateStyle = .short
         df.timeStyle = .short
         note._title = "My note on \(df.string(from: Date()))"
+        saveData(note: note)
+    }
+    
+    
+    func saveData(note: Note){
+        let dbObjectMapper = AWSDynamoDBObjectMapper.default()
+        dbObjectMapper.save(note) { (error) in
+            print(error?.localizedDescription ?? "no error")
+        }
+        
     }
 
 
