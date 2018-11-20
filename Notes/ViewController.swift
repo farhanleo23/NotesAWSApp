@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 }
             }
     } else {
-        createNote()
+        loadNote(noteID: "123")
         }
     }
     
@@ -70,6 +70,18 @@ class ViewController: UIViewController {
             print(error?.localizedDescription ?? "no error")
         }
         
+    }
+    
+    func loadNote(noteID: String){
+        let dbObjectMapper = AWSDynamoDBObjectMapper.default()
+        if let hashKey = AWSIdentityManager.default().identityId{
+            dbObjectMapper.load(Note.self, hashKey: hashKey, rangeKey: noteID){ (model, error)
+                in
+                if let note = model as? Note{
+                    print(note._content ?? "no content")
+                }
+            }
+        }
     }
 
 
