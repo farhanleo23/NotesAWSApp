@@ -45,7 +45,9 @@ class ViewController: UIViewController {
                 }
             }
     } else {
-        loadNote(noteID: "123")
+        //createNote()
+        //loadNote(noteID: "123")
+        updateNote(noteID: "123", content: "updated note")
         }
     }
     
@@ -84,6 +86,18 @@ class ViewController: UIViewController {
         }
     }
 
+    func updateNote(noteID: String, content: String){
+        let dbObjectMapper = AWSDynamoDBObjectMapper.default()
+        if let hashKey = AWSIdentityManager.default().identityId{
+            dbObjectMapper.load(Note.self, hashKey: hashKey, rangeKey: noteID){ (model, error)
+                in
+                if let note = model as? Note{
+                    note._content = content
+                    self.saveData(note: note)
+                }
+            }
+        }
+    }
 
 }
 
