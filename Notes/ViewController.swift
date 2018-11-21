@@ -45,9 +45,11 @@ class ViewController: UIViewController {
                 }
             }
     } else {
+        
         //createNote()
         //loadNote(noteID: "123")
-        updateNote(noteID: "123", content: "updated note")
+        //updateNote(noteID: "123", content: "updated note")
+        deleteNote(noteID: "123")
         }
     }
     
@@ -95,6 +97,17 @@ class ViewController: UIViewController {
                     note._content = content
                     self.saveData(note: note)
                 }
+            }
+        }
+    }
+    
+    func deleteNote(noteID: String){
+        if let note = Note(){
+            note._userId = AWSIdentityManager.default().identityId
+            note._noteId = noteID
+            let dbObjectMapper = AWSDynamoDBObjectMapper.default()
+            dbObjectMapper.remove(note) { (error) in
+                print(error?.localizedDescription ?? "no error")
             }
         }
     }
