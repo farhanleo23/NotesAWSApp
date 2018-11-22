@@ -46,12 +46,12 @@ class ViewController: UIViewController {
             }
     } else {
         
-        createNote(noteID: "100")
-        createNote(noteID: "101")
-        createNote(noteID: "102")
-        loadNote(noteID: "123")
-        updateNote(noteID: "123", content: "updated note")
-        deleteNote(noteID: "123")
+//        createNote(noteID: "100")
+//        createNote(noteID: "101")
+//        createNote(noteID: "102")
+//        loadNote(noteID: "123")
+//        updateNote(noteID: "123", content: "updated note")
+//        deleteNote(noteID: "123")
         queryNotes()
         
         }
