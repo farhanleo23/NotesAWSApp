@@ -46,18 +46,22 @@ class ViewController: UIViewController {
             }
     } else {
         
-        //createNote()
-        //loadNote(noteID: "123")
-        //updateNote(noteID: "123", content: "updated note")
+        createNote(noteID: "100")
+        createNote(noteID: "101")
+        createNote(noteID: "102")
+        loadNote(noteID: "123")
+        updateNote(noteID: "123", content: "updated note")
         deleteNote(noteID: "123")
+        queryNotes()
+        
         }
     }
     
-    func createNote(){
+    func createNote(noteID: String){
         
         guard let note = Note() else { return }
         note._userId = AWSIdentityManager.default().identityId
-        note._noteId = "123"
+        note._noteId = noteID
         note._content = "This is just a text"
         note._creationDate = Date().timeIntervalSince1970 as NSNumber
         let df = DateFormatter()
@@ -110,6 +114,27 @@ class ViewController: UIViewController {
                 print(error?.localizedDescription ?? "no error")
             }
         }
+    }
+    
+    func queryNotes(){
+        let qExp = AWSDynamoDBQueryExpression()
+        
+        qExp.keyConditionExpression = "#uId = :userId"
+        
+        qExp.expressionAttributeNames = ["#uId": "userId"]
+        qExp.expressionAttributeValues = [":userId": AWSIdentityManager.default().identityId!]
+        
+        let objMapper = AWSDynamoDBObjectMapper.default()
+        objMapper.query(Note.self, expression: qExp) { (output, error) in
+            if let notes = output?.items as? [Note] {
+                notes.forEach({(note) in
+                    print(note._content ?? "no content")
+                    print(note._noteId ?? "no ID")
+                    
+                })
+            }
+        }
+        
     }
 
 }
