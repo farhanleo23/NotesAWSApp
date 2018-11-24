@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             }
         }
         
+        //actual download here
         let tUtil = AWSS3TransferUtility.default()
         tUtil.downloadData(forKey: "public/pic.jpg", expression: nil, completionHandler: completionHandler)
     }

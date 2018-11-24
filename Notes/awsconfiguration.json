@@ -26,6 +26,12 @@
       "Region": "eu-central-1"
     }
   },
+  "S3": {
+      "Default": {
+          "Bucket": "notes-userfiles-mobilehub-1461630165",
+          "Region": "eu-central-1"
+      }
+  },
   "DynamoDBObjectMapper": {
     "Default": {
       "Region": "eu-central-1"
