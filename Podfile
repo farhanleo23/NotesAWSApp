@@ -13,4 +13,7 @@ pod 'AWSFacebookSignIn'
 pod 'AWSGoogleSignIn'
 pod 'GoogleSignIn'
 pod 'AWSDynamoDB'
+pod 'AWSS3'
+pod 'AWSCognito'
+
 end
