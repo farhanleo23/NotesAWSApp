@@ -61,6 +61,18 @@ class ViewController: UIViewController {
         tUtil.downloadData(forKey: "public/pic.jpg", expression: nil, completionHandler: completionHandler)
     }
     
+    func deleteData(){
+        let s3 = AWSS3.default()
+        let dor = AWSS3DeleteObjectRequest()
+        dor?.bucket = "notes-userfiles-mobilehub-1461630165"
+        dor?.key = "public/pic.jpg"
+        s3.deleteObject(dor!) {(output, error) in
+            print(output)
+            print(error)
+        }
+        
+    }
+    
     //checks if the user is signed in
     //if signed in does not present the sign up page
     func checkForLogin(){
