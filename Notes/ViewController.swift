@@ -42,7 +42,22 @@ class ViewController: UIViewController {
         }
         
         //let data = UIImage.jpegData(compressionQuality: beach.jpg)
-        //let data1 = UIImageJPEGRepresentation(UIImage.self(), 0.5)
+        
+    }
+    
+    func downloadData(){
+        var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+        completionHandler = {(task, URL, data, error) in
+            DispatchQueue.main.async {
+                let iv = UIImageView.init(frame: self.view.bounds)
+                iv.contentMode = .scaleAspectFit
+                iv.image = UIImage.init(date: data!)
+                self.view.addSubview(iv)
+            }
+        }
+        
+        let tUtil = AWSS3TransferUtility.default()
+        tUtil.downloadData(forKey: "public/pic.jpg", expression: nil, completionHandler: completionHandler)
     }
     
     //checks if the user is signed in
