@@ -15,6 +15,7 @@
 		D8A57EE9219CD3F100BE3FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A57EE8219CD3F100BE3FFB /* Assets.xcassets */; };
 		D8A57EEC219CD3F100BE3FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A57EEA219CD3F100BE3FFB /* LaunchScreen.storyboard */; };
 		D8D6C2CF21A9B40E006BA074 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D8D6C2CE21A9B40E006BA074 /* awsconfiguration.json */; };
+		D8D6C2D121A9C286006BA074 /* beach.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D8D6C2D021A9C286006BA074 /* beach.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D8A57EEB219CD3F100BE3FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8A57EED219CD3F100BE3FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8D6C2CE21A9B40E006BA074 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		D8D6C2D021A9C286006BA074 /* beach.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.JPG; sourceTree = "<group>"; };
 		D98EEA9CE07A985E8F88FB4B /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 		D8A57EE0219CD3EF00BE3FFB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				D8D6C2D021A9C286006BA074 /* beach.JPG */,
 				D8D6C2CE21A9B40E006BA074 /* awsconfiguration.json */,
 				D818851021A205E8004CDDF7 /* Note.swift */,
 				D8A57EE1219CD3EF00BE3FFB /* AppDelegate.swift */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D6C2CF21A9B40E006BA074 /* awsconfiguration.json in Resources */,
+				D8D6C2D121A9C286006BA074 /* beach.JPG in Resources */,
 				D8A57EEC219CD3F100BE3FFB /* LaunchScreen.storyboard in Resources */,
 				D8A57EE9219CD3F100BE3FFB /* Assets.xcassets in Resources */,
 				D8A57EE7219CD3EF00BE3FFB /* Main.storyboard in Resources */,

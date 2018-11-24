@@ -34,6 +34,17 @@ class ViewController: UIViewController {
         checkForLogin()
     }
     
+    func uploadFile() {
+        var completionHandler : AWSS3TransferUtilityUploadCompletionHandlerBlock?
+        completionHandler = {(task, error) in
+            print(task.response?.statusCode ?? "0")
+            print(error?.localizedDescription ?? "no error")
+        }
+        
+        //let data = UIImage.jpegData(compressionQuality: beach.jpg)
+        //let data1 = UIImageJPEGRepresentation(UIImage.self(), 0.5)
+    }
+    
     //checks if the user is signed in
     //if signed in does not present the sign up page
     func checkForLogin(){
