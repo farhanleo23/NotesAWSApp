@@ -11,6 +11,7 @@ import AWSAuthCore
 import AWSAuthUI
 import AWSDynamoDB
 import AWSCore
+import AWSS3
 
 
 class ViewController: UIViewController {
