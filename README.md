@@ -10,3 +10,12 @@ between(1,100,A),
 	between(1,100,C),
 	A+B+C =:= 84,
 	A**2+B**2 =:= C**2.
+
+3). (finding nth term)
+nth(X, 1,[X|_]).
+nth(X, K, [_|L]) :- nth(X, K1, L),
+    K is K1 + 1.
+    
+    to check
+    nth(X,3,[3,2,4,5]).
+
