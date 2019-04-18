@@ -19,3 +19,6 @@ nth(X, K, [_|L]) :- nth(X, K1, L),
     to check
     nth(X,3,[3,2,4,5]).
 
+4). (returns number of elemnts ).
+count([], 0).
+count([_|Tail], N) :- count(Tail, N1), N is N1 + 1.
