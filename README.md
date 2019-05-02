@@ -1,3 +1,5 @@
+These will be removed!
+
 1). (Armstrong number)
 between(1,9,A), between(0,9,B), between(0,9,C), 100*A+10*B+C =:= A^3+B^3+C^3.
 
