@@ -1,75 +1,60 @@
-These will be removed!
+Grocery mart
 
 
 
-______________________________________________________________________________________________
+inventory(pecs, [[milk, 355], [bread, 500], [butter, 299], [eggs, 599]]).
+inventory(budapest, [[milk, 355], [bread,500], [butter, 299], [eggs, 599], [bananas,700]]).
+inventory(gyor, [[milk, 355], [bread,500]]).
+inventory(szeged, [[milk, 355], [bread,500], [eggs, 599]]).
 
-1). (Armstrong number)
-between(1,9,A), between(0,9,B), between(0,9,C), 100*A+10*B+C =:= A^3+B^3+C^3.
+city([pecs, budapest, gyor, szeged]).
 
-2). (Rectangle)
-between(1,100,A),
-	between(1,100,B),
-	between(1,100,C),
-	A+B+C =:= 84,
-	A**2+B**2 =:= C**2.
+priceOfProduct(City, Product, Price):- inventory(City, ProductInfo), member([Product, Price], ProductInfo).
 
-3). (finding nth term)
-nth(X, 1,[X|_]).
-nth(X, K, [_|L]) :- nth(X, K1, L),
-    K is K1 + 1.
-    
-    to check
-    nth(X,3,[3,2,4,5]).
+%sales(PRODUCT, CITY, PRICE, DATE, CUSTOMER)
 
-4). (returns number of elemnts ).
-count([], 0).
-count([_|Tail], N) :- count(Tail, N1), N is N1 + 1.
 
-5. (mileage of car).
-readlist([Head|Tail]):- 
-    writeln("Please type monthly mileage from jan to dec: "), 
-    read(Head), dif(Head, stop), readlist(Tail).
-readlist([]).
+
+:-dynamic sales/5.
+
+displayMenu :- writeln("**********************************\n--------- Sally's Grocery Store -----------\n**********************************\n").
+
+selectCity(City) :- city(X), writeln(X), writeln("Select city"), read(City).
+
+enterNameandDate(Customer, Date) :- writeln("Enter Date(YYYYMMDD)"), read(Date), writeln("Enter your name: "), read(Customer).
+
+buying(City, Product, Date, Customer, Price) :- inventory(City, Products), writeln(Products), writeln("Select Product"), read(Product), priceOfProduct(City, Product, Price), writef("It costs %w Ft. \n", [Price]), assert(sales(Product, City, Price, Date, Customer)).
+
+
+start :- displayMenu, selectCity(City), enterNameandDate(Customer, Date), buying(City, Product, Product, Customer, Price), writeln("Continue shopping (y or n)"), read(Decision), (Decision == y -> start; Decision == n -> writeln("Thank you for shopping with us"); write('\nInvalid Input!!!\n'),fail).
+
+
+%STATISTICS
+
+%City with most sales
+citySales(City, S) :- bagof(Price, Product^Date^Customer^sales(Product, City, Price, Date, Customer), SL), sum(SL, S), assert(cityRevenue(City, S)).
+
+sortbyCityRevenue(Output) :- findall([X,Y],cityRevenue(X,Y),List),
+sort(2, @>, List, OrderedList),
+Output = OrderedList.
+
+% Returns Number of Transactions by city
+cityTrans(City, N) :- bagof(Price, Product^Date^Customer^sales(Product, City, Price, Date, Customer), SL), length(SL, N), assert(cityTransactions(City, N)).
+
+% Returns Number of each product sold
+productTrans(Product, N) :- bagof(Price, City^Date^Customer^sales(Product, City, Price, Date, Customer), SL), length(SL, N).
+
+
+% Customers and money spent
+customersSales(Customer, S) :- bagof(Price, Product^Date^City^sales(Product, City, Price, Date, Customer), SL), sum(SL, S), assert(custSales(Customer, S)).
+
+sortbyCustomerSpending(Output) :- findall([X,Y],custSales(X,Y),List),
+sort(2, @>, List, OrderedList),
+Output = OrderedList.
+
+
 
 sum([], 0).
-sum([Head|Tail], N) :- sum(Tail, N1), N is N1 + Head.
-
-maxlist([X],X).
-maxlist([X,Y|Tail],Max) :- maxlist([Y|Tail],MaxRest), 
-    max(X,MaxRest,Max).
-
-max(X,Y,X) :- X>=Y.
-max(X,Y,Y) :- X<Y.
-
-minlist([X],X).
-minlist([X,Y|Tail],Min) :- minlist([Y|Tail],MinRest), 
-    min(X,MinRest,Min).
-
-min(X,Y,X) :- Y>=X.
-min(X,Y,Y) :- X>Y.
-
-index([H|T], H, 1) :- !.
-index([_|T], H, Index) :-  index(T, H, Index1), !, Index is Index1+1.
+sum([H|T], S) :- sum(T, S1), S is S1 + H.
 
 
-month(1, jan).
-month(2, feb).
-month(3, mar).
-month(4, apr).
-month(5, may).
-month(6, june).
-month(7, july).
-month(8, aug).
-month(9, sep).
-month(10, oct).
-month(11, nov).
-month(12, dec).
-
-start :- readlist(List), sum(List, N), 
-    write("The sum of the total mileage: "), writeln(N),
-    maxlist(List, Max), minlist(List, Min), 
-    index(List, Max, IMax), index(List, Min, IMin),
-    month(IMax, MaxMonth), month(IMin, MinMonth),
-    write("The maximum month: "), writeln(MaxMonth),
-    write("The minimum month: "), writeln(MinMonth).
