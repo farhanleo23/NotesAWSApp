@@ -11,3 +11,5 @@ modify logging settings 3 marks - https://www.thegeekdiary.com/how-to-change-the
 btfrs - https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-linux/?fbclid=IwAR3laiReJut37uxiC2LiroOfCQg_XqZW0aIyMPymNyfZGslswCEMaYYN4Zw
 
 create new partition using fdisk - https://www.tecmint.com/fdisk-commands-to-manage-linux-disk-partitions/
+
+cant acess html - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-web_servers
