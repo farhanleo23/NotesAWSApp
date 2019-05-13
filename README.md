@@ -13,3 +13,5 @@ btfrs - https://www.tecmint.com/move-home-directory-to-new-partition-disk-in-lin
 create new partition using fdisk - https://www.tecmint.com/fdisk-commands-to-manage-linux-disk-partitions/
 
 cant acess html - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-web_servers
+
+all acess - https://onedrive.live.com/view.aspx?resid=D3BAF9D9A246FF50!1605&ithint=file%2cdocx&authkey=!AH3Mngu1xqU-AVo
