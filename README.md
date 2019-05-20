@@ -19,7 +19,6 @@
 </style>
 <body>
 
-<h1>JavaScript Progress Bar</h1>
 
 <div id="myProgress">
   <div id="myBar">50%</div>
